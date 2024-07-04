@@ -1,0 +1,48 @@
+def funkSquare(n):
+    for i in range(n):
+        yield i ** 2
+
+def funkEven(n):
+    for i in range(n + 1):
+        if i % 2 == 0:
+            yield i
+
+def funkDiv(n):
+    for i in range(n + 1):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
+
+def funkSquares(a, b):
+    for i in range(a, b + 1):
+        yield i ** 2
+
+def funkDown(n):
+    while n >= 0:
+        yield n
+        n -= 1
+
+# Example usage
+if __name__ == "__main__":
+    n = int(input("Enter a number for task 1: "))
+    cntSquare = funkSquare(n)
+    for i in cntSquare:
+        print(i)
+    
+    n = int(input("Enter a number for task 2: "))
+    cntEven = funkEven(n)
+    print(*cntEven, sep=", ")
+    
+    n = int(input("Enter a number for task 3: "))
+    cntDiv = funkDiv(n)
+    for i in cntDiv:
+        print(i)
+    
+    a = int(input("Enter the start of range for task 4: "))
+    b = int(input("Enter the end of range for task 4: "))
+    for i in funkSquares(a, b):
+        print(i)
+    
+    n = int(input("Enter a number for task 5: "))
+    cntdown = funkDown(n)
+    for i in cntdown:
+        print(i)
