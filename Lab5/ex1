@@ -1,0 +1,15 @@
+import re
+
+def match_a_followed_by_zero_or_more_bs(input_string):
+    # Определяем шаблон регулярного выражения
+    pattern = r'ab*'
+    
+    # Ищем все совпадения в строке
+    matches = re.findall(pattern, input_string)
+    
+    return matches
+
+# Пример использования
+input_string = input("Введите строку: ")
+result = match_a_followed_by_zero_or_more_bs(input_string)
+print("Совпадения:", result)

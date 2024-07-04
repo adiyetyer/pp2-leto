@@ -1,0 +1,23 @@
+import re
+
+def snake_to_camel(snake_str):
+    # Компилируем регулярное выражение для поиска символов подчеркивания, за которыми следуют буквы
+    pattern = re.compile(r'_([a-z])')
+    
+    # Функция для замены: получает совпадение и возвращает букву в верхнем регистре
+    def replace(match):
+        return match.group(1).upper()
+    
+    # Выполняем замену по шаблону
+    camel_case_str = pattern.sub(replace, snake_str)
+    
+    return camel_case_str
+
+# Чтение ввода от пользователя
+snake_case_input = input("Введите строку в формате snake_case: ")
+
+# Преобразование строки
+camel_case_output = snake_to_camel(snake_case_input)
+
+# Вывод преобразованной строки
+print("Строка в формате CamelCase:", camel_case_output)

@@ -1,0 +1,16 @@
+import re
+
+def camel_to_snake(camel_str):
+    # Заменяем каждую заглавную букву на подчеркивание и эту букву в нижнем регистре
+    snake_str = re.sub(r'([A-Z])', r'_\1', camel_str)
+    # Приводим всю строку к нижнему регистру
+    snake_str = snake_str.lower()
+    # Удаляем возможное начальное подчеркивание, если строка начиналась с заглавной буквы
+    if snake_str.startswith('_'):
+        snake_str = snake_str[1:]
+    return snake_str
+
+# Пример использования
+input_string = input("Введите строку в формате CamelCase: ")
+result = camel_to_snake(input_string)
+print("Результат в формате snake_case:", result)

@@ -1,0 +1,14 @@
+import re
+
+def find_sequences(text):
+    # Define the regex pattern for sequences of lowercase letters joined with an underscore
+    pattern = r'\b[a-z]+(?:_[a-z]+)+\b'
+    # Find all matches in the provided text
+    matches = re.findall(pattern, text)
+    return matches
+
+# Example usage
+text = "Here are some examples: simple_example, another_example, and one_more_example. This is not_match."
+
+sequences = find_sequences(text)
+print("Sequences found:", sequences)

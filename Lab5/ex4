@@ -1,0 +1,15 @@
+import re
+
+def find_upper_followed_by_lower(input_string):
+    # Определяем шаблон регулярного выражения
+    pattern = r'[A-Z][a-z]+'
+    
+    # Ищем все совпадения в строке
+    matches = re.findall(pattern, input_string)
+    
+    return matches
+
+# Пример использования
+input_string = input("Введите строку: ")
+result = find_upper_followed_by_lower(input_string)
+print("Найденные последовательности:", result)
